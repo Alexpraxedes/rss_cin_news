@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "rsscinnews",
+    "slug": "rsscinnews",
+    "scheme": "rsscinnews",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "com.praxedesalex.rsscinnews"
+    },
+    "ios": {
+      "bundleIdentifier": "com.praxedesalex.rsscinnews"
+    }
+  }
+}

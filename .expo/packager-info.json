@@ -1,0 +1,9 @@
+{
+  "expoServerPort": 19000,
+  "packagerPort": 19000,
+  "expoServerNgrokUrl": "https://ie-r4b.anonymous.rss-cin-news.exp.direct",
+  "packagerNgrokUrl": "https://ie-r4b.anonymous.rss-cin-news.exp.direct",
+  "ngrokPid": 5831,
+  "packagerPid": null,
+  "webpackServerPort": null
+}
