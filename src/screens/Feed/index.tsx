@@ -38,6 +38,13 @@ export interface FeedProps extends RssFeedProps {
   date: string,
 }
 
+/**
+ * The Feed component is responsible for rendering the user's news feed. 
+ * It retrieves news data from AsyncStorage and formats it for rendering. 
+ * It also allows the user to remove all news portals and add new ones.
+ *
+ * @return {JSX.Element} The rendered Feed component
+ */
 export function Feed() {  
   const { navigate } = useNavigation();
   const [isLoading, setIsLoading] = useState(true);
@@ -46,6 +53,12 @@ export function Feed() {
   const [feedRssNews, setFeedRssNews] = useState<FeedProps[]>([]);
   const [restoreRssNews, setRestoreRssNews] = useState<FeedProps[]>([]);
 
+  /**
+   * Asynchronously loads the user's news feed from local storage and sorts the
+   * feed by date. Formats dates as "dd/mm/yy" using Brazilian Portuguese
+   * locale. Sets the formatted news feed and feed to state and sets isLoading
+   * to false when done.
+   */
   async function loadFeedNews() {
     const dataNews = '@rss_cin_news:news';
     const response = await AsyncStorage.getItem(dataNews);
@@ -99,6 +112,11 @@ export function Feed() {
     setIsLoading(false);
   };
 
+  /**
+   * Removes all news feed portals from AsyncStorage and calls loadFeedNews to refresh the state.
+   *
+   * @throws {Error} if unable to remove all portals from AsyncStorage
+   */
   async function handleRemoveAllFeedNews() {
     try {
       const dataKey = '@rss_cin_news:feed';
@@ -112,6 +130,11 @@ export function Feed() {
     }
   };
 
+  /**
+   * Asynchronously restores RSS feed to local storage and sets the state of restored news.
+   *
+   * @return {Promise<void>} Promise that resolves when the function completes.
+   */
   async function handleRestoreRssFeed(){
     const restoreFeed: FeedProps[] = rssFeeds.map((item: RssFeedProps) => {
       const date = Intl.DateTimeFormat('pt-BR', {
@@ -143,6 +166,11 @@ export function Feed() {
     }
   }
 
+  /**
+   * Navigates to the 'Nova notícia' page.
+   *
+   * @return {void} 
+   */
   function handleCreateFeedNews() {
     navigate('Nova notícia' as never);
   };

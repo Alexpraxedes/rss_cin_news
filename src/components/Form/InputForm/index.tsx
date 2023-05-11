@@ -11,6 +11,15 @@ interface Props extends TextInputProps {
     error: string | undefined;
 }
 
+/**
+ * Renders an input form component.
+ *
+ * @param {Props} control - the form control object.
+ * @param {string} name - the name of the input field.
+ * @param {string} error - the error message to display.
+ * @param {...rest} rest - the additional props to pass to the input field.
+ * @return {JSX.Element} - the input form component.
+ */
 export function InputForm({
     control,
     name,

@@ -10,6 +10,12 @@ import { categories } from "../../utils/categories"; // Importing the categories
 import { FeedContext } from "../../context/FeedContext"; // Importing the FeedContext
 import { Linking } from "react-native"; // Importing the Linking
 
+/**
+ * Renders a news card component.
+ *
+ * @param {object} data - The data object containing news information.
+ * @return {JSX.Element} A React component representing a news card.
+*/
 export function NewsCard( { data }: any ) {
     const { selectedFeed } = useContext(FeedContext);
     const [category] = categories.filter(
@@ -27,6 +33,11 @@ export function NewsCard( { data }: any ) {
 
     const dateFormatted = `${day.padStart(2, "0")}/${month.toString().padStart(2, "0")}/${year}`;
 
+    /**
+     * Handles navigation to a given URL.
+     *
+     * @param {string} url - The URL to navigate to.
+    */
     function handleNavigateToNews( url : string) {
         Linking.openURL(url);
     };

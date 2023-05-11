@@ -15,7 +15,12 @@ const { Navigator, Screen } = createBottomTabNavigator();
 interface ScreenOptions {
     tabBarIcon: ({ size, color }: { size: number, color: string }) => React.ReactNode;
 }
-  
+
+/**
+ * Generates and returns the navigation stack for the application.
+ *
+ * @return {JSX.Element} A JSX element representing the navigation stack.
+ */
 export function AppRoutes() {
     const theme = useTheme();
 

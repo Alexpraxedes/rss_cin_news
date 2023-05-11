@@ -32,6 +32,11 @@ const schema = Yup.object().shape({
     text: Yup.string().required('Texto é obrigatório')
 });
 
+/**
+ * Creates a new feed news item and saves it to the device's local storage.
+ *
+ * @return {JSX.Element} The JSX element representing the new feed news item form.
+ */
 export function FeedNewsCreate() {
     const dataKey = '@rss_cin_news:news';
     const [category, setCategory] = useState({
@@ -49,14 +54,28 @@ export function FeedNewsCreate() {
         { resolver: yupResolver(schema) }
     );
 
+    /**
+     * Sets the state of `categoryModalOpen` to `true`.
+     */
     function handleOpenSelectCategoryModal() {
         setCategoryModalOpen(true);
     };
 
+    /**
+     * Closes the select category modal.
+     *
+     * @return {void} 
+     */
     function handleCloseSelectCategoryModal() {
         setCategoryModalOpen(false);
     };
 
+        /**
+     * An async function that handles the registration of a new feed news item.
+     *
+     * @param {any} form - The form data object.
+     * @return {Promise<void>} A Promise that resolves when the registration is complete.
+     */
     async function handleRegister(form: any) {
         if (category.key === 'category')
             return Alert.alert('Selecione a categoria');

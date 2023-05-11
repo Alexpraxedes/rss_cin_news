@@ -12,6 +12,19 @@ interface Props extends TextInputProps{
     error: string | undefined;
 };
 
+/**
+ * Renders an Input Textarea component with a Controller and optional error message.
+ *
+ * @param {object} props - The component props.
+ * @param {string} props.placeholderTextColor - The color of the placeholder text.
+ * @param {string} props.textAlignVertical - The vertical alignment of the text.
+ * @param {boolean} props.multiline - Whether the input should allow multiple lines of text.
+ * @param {object} props.control - The React Hook Form control object.
+ * @param {string} props.name - The name of the input field.
+ * @param {string} props.error - The error message to display, if any.
+ * @param {object} props.rest - Additional props to pass to the Input component.
+ * @return {JSX.Element} - The rendered Input Textarea component.
+ */
 export function InputTextarea({ 
     placeholderTextColor,
     textAlignVertical,

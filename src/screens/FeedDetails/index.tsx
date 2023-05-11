@@ -26,6 +26,11 @@ import { NewsCard } from "../../components/NewsCard"; // Importing the NewsCard 
 import { categories } from "../../utils/categories"; // Importing the categories object
 import { FeedProps } from "../Feed"; // Importing the FeedProps interface
 
+/**
+ * This function renders the details of a feed, including a list of news cards.
+ * 
+ * @return {JSX.Element} The JSX Element that represents the component.
+ */
 export function FeedDetails( ) {
     const [isLoading, setIsLoading] = useState(true);
     const { selectedFeed, setSelectedFeed } = useContext(FeedContext);
@@ -35,11 +40,22 @@ export function FeedDetails( ) {
         item => item.key === selectedFeed?.category
     );
     setSelectedFeed(selectedFeed);
+
+    /**
+     * Sets the selected feed data and navigates to the FeedEdit screen.
+     *
+     * @param {FeedProps} data - The data of the selected feed.
+     */
     function handleNavigateToFeedNewsEdit( data : FeedProps) {
         setSelectedFeed(data);
         navigate('FeedEdit' as never);
     }
 
+    /**
+     * Deletes the selected feed news from AsyncStorage and navigates to the Feed screen.
+     *
+     * @param {FeedProps} selectedFeed - The feed news to be deleted.
+     */
     const dataKey = '@rss_cin_news:feed';
     async function handleDeleteFeedNews(selectedFeed : FeedProps) {
         try {
@@ -58,6 +74,11 @@ export function FeedDetails( ) {
         }
     }
 
+    /**
+     * Fetches an RSS feed from the selected feed and updates the component's state with the result.
+     * 
+     * @return {Promise<void>} A Promise that resolves when the RSS feed has been fetched and the state has been updated.
+     */
     const getRss = async () => {
         const rssValue = await getRssFeed(selectedFeed?.urlFeed!);
         setRss(rssValue.items);

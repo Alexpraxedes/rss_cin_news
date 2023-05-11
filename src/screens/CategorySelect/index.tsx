@@ -24,11 +24,25 @@ interface CategorySelectProps {
     closeSelectCategory: () => void;
 }
 
+/**
+ * Renders a category select component.
+ *
+ * @param {Object} props - The component props.
+ * @param {Category} props.category - The currently selected category.
+ * @param {function} props.setCategory - The function to set the selected category.
+ * @param {function} props.closeSelectCategory - The function to close the category select.
+ * @return {JSX.Element} - The category select component.
+ */
 export function CategorySelect({
     category,
     setCategory,
     closeSelectCategory
 } : CategorySelectProps) {
+    /**
+     * Sets the selected category to the given category.
+     *
+     * @param {Category} category - The category to set as selected.
+     */
     function handleCategorySelect(category: Category) {
         setCategory(category);
     }

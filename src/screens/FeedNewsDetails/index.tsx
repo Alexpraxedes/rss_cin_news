@@ -22,6 +22,11 @@ import {
 } from "./styles"; // Importing the styled components
 import { ScreenHeader } from "../../components/ScreenHeader"; // Importing the ScreenHeader componentcomponent
 
+/**
+ * Renders the details of a news feed item.
+ *
+ * @return {JSX.Element} A JSX Element that renders the news feed item details UI.
+ */
 export function FeedNewsDetails( ) {
     const { selectedNews, setSelectedNews } = useContext(NewsContext);
 
@@ -31,11 +36,22 @@ export function FeedNewsDetails( ) {
         item => item.key === selectedNews?.category
     );
 
+    /**
+     * Sets the selected news and navigates to the FeedNewsEdit screen.
+     *
+     * @param {FeedNew} data - The data for the selected news.
+     */
+
     function handleNavigateToFeedNewsEdit( data : FeedNew) {
         setSelectedNews(data);
         navigate('FeedNewsEdit' as never);
     }
 
+    /**
+     * Deletes a feed news item from AsyncStorage and navigates to the Feed screen.
+     *
+     * @param {FeedNew} selectedNews - The news item to be deleted.
+     */
     const dataKey = '@rss_cin_news:news';
     async function handleDeleteFeedNews(selectedNews : FeedNew) {
         try {

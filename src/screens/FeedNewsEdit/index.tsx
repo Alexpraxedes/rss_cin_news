@@ -33,6 +33,17 @@ const schema = Yup.object().shape({
     text: Yup.string().required('Texto é obrigatório')
 });
 
+/**
+ * Renders a form to edit a news feed item, allowing the user to modify the
+ * title, image, abstract, and text fields of the selected news item. The form
+ * also includes a category selection button that opens a modal to allow the
+ * user to select a category for the news item. When the user submits the form,
+ * the function updates the selected news item with the new values and saves
+ * the updated item to local storage. If the save is successful, the user is
+ * navigated back to the news feed screen.
+ *
+ * @return {JSX.Element} The rendered FeedNewsEdit component
+ */
 export function FeedNewsEdit() {
     const dataKey = '@rss_cin_news:news';
     const { navigate } = useNavigation();
@@ -60,6 +71,10 @@ export function FeedNewsEdit() {
         resolver: yupResolver(schema)
     });
 
+    /**
+     * Sets the values for a news feed by calling setValue for each field
+     * from newFeed object, if available.
+     */
     function SetValuesNews(){
         setValue('title', newFeed?.title);
         setValue('image', newFeed?.image);
@@ -67,14 +82,29 @@ export function FeedNewsEdit() {
         setValue('text', newFeed?.text);
     };
 
+    /**
+     * Sets the `categoryModalOpen` state to `true` to indicate that the category selection modal
+     * should be displayed to the user.
+     */
     function handleOpenSelectCategoryModal() {
         setCategoryModalOpen(true);
     };
 
+    /**
+     * Closes the select category modal.
+     *
+     * @return {void}
+     */
     function handleCloseSelectCategoryModal() {
         setCategoryModalOpen(false);
     };
 
+    /**
+     * Asynchronously handles the editing of a news feed item. 
+     *
+     * @param {any} form - The form object containing the updated data.
+     * @return {Promise<void>} Promise that resolves with no value upon completion.
+     */
     async function handleEdit(form: any) {
         if (category.key === 'category')
             return Alert.alert('Selecione a categoria');

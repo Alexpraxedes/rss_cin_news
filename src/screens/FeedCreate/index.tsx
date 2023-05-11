@@ -31,6 +31,12 @@ const schema = Yup.object().shape({
     image: Yup.string()
 });
 
+/**
+ * Creates a new RSS feed by saving its title, image, url, description, category, and current date to AsyncStorage.
+ *
+ * @param {Object} form - an object containing the new feed's title, image, url, and description
+ * @return {void}
+ */
 export function FeedCreate() {
     const dataKey = '@rss_cin_news:feed';
     const [category, setCategory] = useState({
@@ -48,14 +54,26 @@ export function FeedCreate() {
         { resolver: yupResolver(schema) }
     );
 
+    /**
+     * Sets the `categoryModalOpen` state to true, which opens the select category modal.
+     */
     function handleOpenSelectCategoryModal() {
         setCategoryModalOpen(true);
     };
 
+    /**
+     * Closes the select category modal by setting the categoryModalOpen state to false.
+     */
     function handleCloseSelectCategoryModal() {
         setCategoryModalOpen(false);
     };
 
+    /**
+     * Asynchronously handles the registration of a new feed item. 
+     *
+     * @param {any} form - the form data containing the feed item details
+     * @return {Promise<void>} - a Promise that resolves when the function completes successfully
+     */
     async function handleRegister(form: any) {
         if (category.key === 'category')
             return Alert.alert('Selecione a categoria');

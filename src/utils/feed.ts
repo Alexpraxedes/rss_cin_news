@@ -38,5 +38,3 @@ export const rssFeeds = [
         category: 'entertainment',
     }
 ];
-
-// https://s02.video.glbimg.com/x360/3615149.jpg

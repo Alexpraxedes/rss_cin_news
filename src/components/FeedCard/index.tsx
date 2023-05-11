@@ -17,6 +17,9 @@ interface Props {
     data: FeedProps;
 }
  
+/**
+ * Sets categoryModalOpen to true, indicating that the SelectCategoryModal is open.
+ */
 export function FeedCard({ data }: Props) {
     const { setSelectedNews } = useContext(NewsContext);
 
@@ -24,8 +27,12 @@ export function FeedCard({ data }: Props) {
         item => item.key === data.category
     );
 
+    /**
+     * Sets the selected news and navigates to the FeedNewsDetails screen
+     *
+     * @param {FeedProps} data - The feed data to be displayed in the details screen
+     */
     const { navigate } = useNavigation();
-
     function handleNavigateToFeedNewsDetails( data : FeedProps) {
         setSelectedNews(data);
         navigate('FeedNewsDetails' as never);

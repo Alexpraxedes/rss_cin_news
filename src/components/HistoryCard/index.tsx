@@ -12,6 +12,14 @@ interface Props {
     color: string;
 };
 
+/**
+ * Renders a history card component with a given title, amount, and color.
+ *
+ * @param {string} title - The title of the history card.
+ * @param {number} amount - The amount displayed on the history card.
+ * @param {string} color - The color of the history card.
+ * @return {JSX.Element} A history card component with the specified properties.
+ */
 export function HistoryCard({ title, amount, color }: Props) {
     return (
         <Container color={color}>

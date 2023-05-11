@@ -28,6 +28,17 @@ interface Props {
     data: FeedNewsCardProps;
 }
  
+/**
+ * Renders a news card with title, category, abstract, and date. 
+ *
+ * @param {Object} data - The data object containing information about the news. 
+ * @param {string} data.title - The title of the news. 
+ * @param {string} data.category - The category of the news. 
+ * @param {string} data.abstract - The abstract of the news. 
+ * @param {string} data.date - The date of the news. 
+ * 
+ * @returns {JSX.Element} A React component representing the news card. 
+ */
 export function FeedNewsCard({ data }: Props) {
     const { setSelectedNews } = useContext(NewsContext);
 
@@ -35,8 +46,12 @@ export function FeedNewsCard({ data }: Props) {
         item => item.key === data.category
     );
 
+    /**
+     * Sets the selected news and navigates to the FeedNewsDetails screen.
+     *
+     * @param {FeedNewsCardProps} data - The data for the selected news.
+     */
     const { navigate } = useNavigation();
-
     function handleNavigateToFeedNewsDetails( data : FeedNewsCardProps) {
         setSelectedNews(data);
         navigate('FeedNewsDetails' as never);

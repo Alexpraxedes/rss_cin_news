@@ -32,6 +32,11 @@ const schema = Yup.object().shape({
     image: Yup.string()
 });
 
+/**
+ * Renders a form for editing RSS feeds. Uses a `FeedContext` to retrieve the selected feed.
+ *
+ * @return {JSX.Element} The JSX code for the component.
+ */
 export function FeedEdit() {
     const dataKey = '@rss_cin_news:feed';
     const { navigate } = useNavigation();
@@ -59,6 +64,9 @@ export function FeedEdit() {
         { resolver: yupResolver(schema) }
     );
 
+    /**
+     * Sets values for the fields of the new feed object.
+     */
     function SetValuesFeed() {
         setValue('title', newFeed?.title);
         setValue('urlFeed', newFeed?.urlFeed);
@@ -66,14 +74,31 @@ export function FeedEdit() {
         setValue('image', newFeed?.image);
     }
 
+    /**
+     * Sets categoryModalOpen to true, indicating that the SelectCategoryModal is open.
+     */
+
     function handleOpenSelectCategoryModal() {
         setCategoryModalOpen(true);
     };
 
+    /**
+     * Closes the select category modal by setting the `categoryModalOpen` state to false.
+     *
+     * @return {void} 
+     */
     function handleCloseSelectCategoryModal() {
         setCategoryModalOpen(false);
     };
 
+    /**
+     * Handles updating a RSS feed with new information.
+     *
+     * @async
+     * @function handleEdit
+     * @param {object} form - The form with updated information about the RSS feed.
+     * @returns {Promise<void>}
+     */
     async function handleEdit(form: any) {
         if (category.key === 'category')
             return Alert.alert('Selecione a categoria');
