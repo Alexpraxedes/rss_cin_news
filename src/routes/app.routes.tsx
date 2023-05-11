@@ -8,7 +8,8 @@ import { FeedCreate } from "../screens/FeedCreate"; // Importing the Register co
 import { FeedNewsCreate } from "../screens/FeedNewsCreate"; // Importing the Register component
 import { FeedNewsDetails } from "../screens/FeedNewsDetails"; // Importing the FeedNewsDetails component
 import { FeedNewsEdit } from "../screens/FeedNewsEdit"; // Importing the FeedNewsEdit component
-import { FeedDetails } from "../screens/FeedDetails";
+import { FeedDetails } from "../screens/FeedDetails"; // Importing the FeedDetails component
+import { FeedEdit } from "../screens/FeedEdit"; // Importing the FeedEdit component
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -102,7 +103,7 @@ export function AppRoutes() {
             />
             <Screen
                 name="FeedEdit"
-                component={FeedDetails}
+                component={FeedEdit}
                 options={{
                     tabBarItemStyle: {
                         display: 'none'

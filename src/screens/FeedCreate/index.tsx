@@ -97,7 +97,7 @@ export function FeedCreate() {
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <Container>
-                <ScreenHeader title="Nova portal de notícias" />
+                <ScreenHeader title="Novo portal de notícias" />
 
                 <Form>
                     <Fields>
