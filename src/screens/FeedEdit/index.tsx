@@ -5,26 +5,25 @@ import {
     Keyboard,
     Alert
 } from "react-native"; // Importing Modal from react-native
-import * as Yup from "yup"; // Importing Yup
+import AsyncStorage from "@react-native-async-storage/async-storage"; // Importing AsyncStorage from @react-native-async-storage/async-storage
+import { useNavigation } from "@react-navigation/native"; // Importing useNavigation from @react-navigation/native
 import { yupResolver } from "@hookform/resolvers/yup"; // Importing yupResolver from @hookform/resolvers/yup
 import { useForm } from "react-hook-form"; // Importing useForm from react-hook-form
-import AsyncStorage from "@react-native-async-storage/async-storage"; // Importing AsyncStorage from @react-native-async-storage/async-storage
-import uuid from "react-native-uuid"; // Importing uuid from react-native-uuid
-import { useNavigation } from "@react-navigation/native"; // Importing useNavigation from @react-navigation/native
+import * as Yup from "yup"; // Importing Yup from yup
 
 import { 
     Container,
     Form, 
     Fields
 } from "./styles"; // Importing the styled components
-import { InputForm } from "../../components/Form/InputForm"; // Importing the Input component
-import { InputTextarea } from "../../components/Form/InputTextarea"; // Importing the Input component
-import { Button } from "../../components/Form/Button"; // Importing the Button componentTransactionTypeButton component
 import { CategorySelectButton } from "../../components/Form/CategorySelectButton"; // Importing the CategorySelect component
-import { CategorySelect } from '../CategorySelect'; // Importing the CategorySelect component
+import { Button } from "../../components/Form/Button"; // Importing the Button componentTransactionTypeButton component
 import { ScreenHeader } from "../../components/ScreenHeader"; // Importing the ScreenHeader component
+import { InputTextarea } from "../../components/Form/InputTextarea"; // Importing the Input component
+import { InputForm } from "../../components/Form/InputForm"; // Importing the Input component
+import { CategorySelect } from '../CategorySelect'; // Importing the CategorySelect component
 import { categories } from "../../utils/categories"; // Importing the categories object
-import { FeedContext } from "../../context/FeedContext";
+import { FeedContext } from "../../context/FeedContext"; // Importing the FeedContext
 
 const schema = Yup.object().shape({
     title: Yup.string().required('Título é obrigatório'),

@@ -1,16 +1,15 @@
 import React from "react"; // Importing React
-import { Platform } from "react-native"; // Importing Platform from react-native
-import { MaterialCommunityIcons } from "@expo/vector-icons"; // Importing the MaterialCommunityIcons component from @expo/vector-icons
-import { useTheme } from "styled-components"; // Importing the useTheme hook from styled-components
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"; // Importing the createBottomTabNavigator function from @react-navigation/bottom-tabs
-import { Feed } from "../screens/Feed"; // Importing the Dashboard component
-import { FeedCreate } from "../screens/FeedCreate"; // Importing the Register component
-import { FeedNewsCreate } from "../screens/FeedNewsCreate"; // Importing the Register component
+import { MaterialCommunityIcons } from "@expo/vector-icons"; // Importing the MaterialCommunityIcons component from @expo/vector-icons
 import { FeedNewsDetails } from "../screens/FeedNewsDetails"; // Importing the FeedNewsDetails component
+import { useTheme } from "styled-components"; // Importing the useTheme hook from styled-components
+import { FeedNewsCreate } from "../screens/FeedNewsCreate"; // Importing the Register component
 import { FeedNewsEdit } from "../screens/FeedNewsEdit"; // Importing the FeedNewsEdit component
 import { FeedDetails } from "../screens/FeedDetails"; // Importing the FeedDetails component
+import { FeedCreate } from "../screens/FeedCreate"; // Importing the Register component
 import { FeedEdit } from "../screens/FeedEdit"; // Importing the FeedEdit component
-
+import { Platform } from "react-native"; // Importing Platform from react-native
+import { Feed } from "../screens/Feed"; // Importing the Dashboard component
 const { Navigator, Screen } = createBottomTabNavigator();
 
 interface ScreenOptions {

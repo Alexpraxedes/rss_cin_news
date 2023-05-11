@@ -6,9 +6,9 @@ import {
     Footer,
     TextAbstract
 } from "./styles"; // Importing the styled components
+import { categories } from "../../utils/categories"; // Importing the categories object
 import { FeedContext } from "../../context/FeedContext"; // Importing the FeedContext
-import { categories } from "../../utils/categories";
-import { Linking } from "react-native";
+import { Linking } from "react-native"; // Importing the Linking
 
 export function NewsCard( { data }: any ) {
     const { selectedFeed } = useContext(FeedContext);

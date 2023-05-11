@@ -10,8 +10,8 @@ import {
     Image
 } from "./styles"; // Importing the styled components
 import { categories } from "../../utils/categories"; // Importing the categories object
-import { FeedProps } from "../../screens/Feed"; // Importing the FeedProps interface
 import { FeedContext } from "../../context/FeedContext"; // Importing the FeedContext
+import { FeedProps } from "../../screens/Feed"; // Importing the FeedProps interface
 
 interface Props {
     data: FeedProps;

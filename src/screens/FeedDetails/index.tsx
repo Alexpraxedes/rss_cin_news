@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react"; // Importing React
 import { useNavigation } from "@react-navigation/native"; // Importing useNavigation from @react-navigation/native
-import { ActivityIndicator, Alert } from "react-native"; // Importing AsyncStorage from react-native
 import AsyncStorage from "@react-native-async-storage/async-storage"; // Importing the AsyncStorage library
-import { useTheme } from "styled-components"; // Importing the useTheme hook from styled-components // Importing useNavigation from @react-navigation/native
-import { categories } from "../../utils/categories"; // Importing the categories object
+import { ActivityIndicator, Alert } from "react-native"; // Importing AsyncStorage from react-native
+import { useTheme } from "styled-components"; // Importing the useTheme hook from styled-components
+
 import { 
     Container,
     Content,
@@ -21,9 +21,10 @@ import {
     IconActions
 } from "./styles"; // Importing the styled components
 import { ScreenHeader } from "../../components/ScreenHeader"; // Importing the ScreenHeader componentcomponent
-import { FeedProps } from "../Feed"; // Importing the FeedProps interface
 import { FeedContext, getRssFeed } from "../../context/FeedContext"; // Importing the FeedContext
 import { NewsCard } from "../../components/NewsCard"; // Importing the NewsCard component
+import { categories } from "../../utils/categories"; // Importing the categories object
+import { FeedProps } from "../Feed"; // Importing the FeedProps interface
 
 export function FeedDetails( ) {
     const [isLoading, setIsLoading] = useState(true);
