@@ -30,11 +30,13 @@ export const Image = styled.Image `
 `;
 
 export const Icon = styled(FontAwesome)<ContainerProps>`
-    color: ${({ color }) => color};
-    font-size: ${RFValue(20)}px;
     position: absolute;
     top: ${RFValue(16)}px;
-    left: ${RFValue(18)}px;
+    left: ${RFValue(16)}px;
+    color: ${({ color }) => color};
+    text-shadow: 0px 1px 2px rgba(1, 1, 1, 0.5);
+    font-size: ${RFValue(16)}px;
+    padding: ${RFValue(2)}px;
 `;
 
 export const DateContainer = styled.View`
@@ -64,5 +66,6 @@ export const Footer = styled.View`
 export const Title = styled.Text<ContainerProps>`
     font-family: ${({ theme }) => theme.fonts.medium};
     color: ${({ color }) => color};
+    text-shadow: 0px 1px 2px rgba(1, 1, 1, 0.5);
     font-size: ${RFValue(14)}px;
 `;

@@ -43,7 +43,10 @@ export function LatestNewsCard( { data }: Props ) {
     return (
         <Container onPress={() => handleNavigateToFeedNewsDetails(data)} >
             <Image source={{ uri: data.image}} />
-            <Icon color={category.color} name={category.icon} />
+            <Icon 
+                color={category.color} 
+                name={category.icon} 
+            />
             
             <Footer>
                 <Title color={category.color}>{data.title}</Title>

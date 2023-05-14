@@ -255,12 +255,11 @@ export function Feed() {
             <>
               <NewsContainer>
                 <Title>Ainda não temos notícias</Title>
-              </NewsContainer>
-              <NewsContainer>
 
                 <Button 
                   title="Adicionar notícias"
                   onPress={handleCreateFeedNews} 
+                  style={{ marginTop: 60 }}
                 />
               </NewsContainer>
             </>

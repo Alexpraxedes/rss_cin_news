@@ -16,6 +16,9 @@ export const Container = styled.View`
 
 export const Content = styled.ScrollView.attrs({
     showsVerticalScrollIndicator: false,
+    contentContainerStyle: {
+        paddingBottom: getBottomSpace()
+    }
 })`
     padding: 10px 20px;
 `;

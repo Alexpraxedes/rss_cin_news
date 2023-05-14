@@ -39,7 +39,6 @@ export function FeedDetails( ) {
     const [category] = categories.filter(
         item => item.key === selectedFeed?.category
     );
-    setSelectedFeed(selectedFeed);
 
     /**
      * Sets the selected feed data and navigates to the FeedEdit screen.
@@ -86,6 +85,7 @@ export function FeedDetails( ) {
     };
 
     useEffect(() => {
+        setSelectedFeed(selectedFeed);
         setIsLoading(true);
         getRss();
     }, [selectedFeed]);
