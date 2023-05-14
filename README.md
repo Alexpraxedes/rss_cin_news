@@ -6,4 +6,4 @@ O aplicativo resulta em um informativo onde se reúne uma série de portais de n
 
 O App está preparado para todos os disposíveis smartphones Android e iOS, cumprindo os critérios de tela e particularidades das mesmas, como por exemplo as barras de navegação entre telas dos iPhones e existência ou não de notch, área que comporta a câmera frontal.
 
-Vídeo de demonstração link.
+Vídeo de demonstração (link)[https://www.youtube.com/watch?v=-a6tvyvl1e8&ab_channel=AlexPraxedes].
